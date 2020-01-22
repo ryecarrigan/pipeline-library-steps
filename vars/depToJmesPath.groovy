@@ -1,6 +1,6 @@
 def call(String eventTrigger) {
   if (!eventTrigger) {
-    return "<!-- -->"
+    return "<!-- -->" //ok
   }
 
   return """<!-- JMESPath Event Trigger -->
