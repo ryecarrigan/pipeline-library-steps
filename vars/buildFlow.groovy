@@ -21,8 +21,9 @@ spec:
             yaml: yaml,
             cloud: cloud_name,
         ) {
-            echo("Bonjour")
-            body()
+            node(label) {
+                echo("Bonjour")
+            }
         }
     }
 }
