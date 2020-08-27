@@ -2,27 +2,18 @@ void call(Closure body) {
     String label = randomPodLabel()
     stage('Linting Step') {
         def yaml = """
-apiVersion: "v1"
-kind: "Pod"
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    some-label: some-label-value
 spec:
   containers:
-    image: "cloudbees/cloudbees-core-agent:2.235.5.1"
-    name: "jnlp"
-    resources:
-      requests:
-        cpu: "100m"
-        memory: "256Mi"
-    volumeMounts:
-    - mountPath: "/home/jenkins/agent"
-      name: "workspace-volume"
-      readOnly: false
-  nodeSelector:
-    kubernetes.io/os: "linux"
-  restartPolicy: "Never"
-  volumes:
-  - emptyDir:
-      medium: ""
-    name: "workspace-volume"
+  - name: busybox
+    image: busybox
+    command:
+    - cat
+    tty: true
 """
         def cloud_name = 'kubernetes'
         podTemplate(
