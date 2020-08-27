@@ -2,7 +2,6 @@ void call(Closure body) {
     String label = randomPodLabel()
     stage('Linting Step') {
         def yaml = """
----
 apiVersion: "v1"
 kind: "Pod"
 spec:
