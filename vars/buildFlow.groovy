@@ -9,6 +9,7 @@ void call(Closure body) {
             cloud: cloud_name,
         ) {
             echo("Bonjour")
+            body()
         }
     }
 }
