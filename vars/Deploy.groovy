@@ -1,3 +1,3 @@
 def call(Map args = [:]) {
-  echo "Stage not implemented"
+  echo "mvn deploy"
 }
