@@ -1,3 +1,3 @@
 def call(Map args = [:]) {
-  doBuild()
+  sh 'mvn compile test-compile'
 }
